@@ -2,6 +2,12 @@
 
 A Racket Client for the [4chan API](https://github.com/4chan/4chan-API)
 
+## Usage
+
+```racket
+(require 4chan/api)
+```
+
 ## TODO
 
 - package this up so that people can install it easily.
