@@ -56,7 +56,7 @@
     (and (hash-has-key? thread 'sub)
          (regexp-match "Lisp General" (hash-ref thread 'sub))))
 
-(define (4chan-thread-g-lisp-general)
+(define (4chan-catalog-search-g-lisp-general)
   (let* ([catalog (4chan-data-catalog "g")]
         [maybe-lg
          (filter
