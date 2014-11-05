@@ -11,7 +11,7 @@
 (provide 4chan-catalog-search)
 (provide 4chan-thread-match-fn)
 (provide 4chan-thread-is-lisp-general?)
-(provide 4chan-catalog-search-g-lisp-general)
+(provide 4chan-catalog-find-lisp-general)
 (provide 4chan-thread-url)
 
 ;;
@@ -58,13 +58,14 @@
     (and (hash-has-key? thread 'sub)
          (regexp-match "Lisp General" (hash-ref thread 'sub))))
 
-(define (4chan-catalog-search-g-lisp-general)
-  (let* ([catalog (4chan-data-catalog "g")]
-        [maybe-lg
-         (filter
-          4chan-thread-is-lisp-general?
-          (flatten
-           (map (lambda (page) (hash-ref page 'threads)) catalog)))])
+; Find first lisp general if possible
+; This may return a single thread while 4chan-catalog-search returns a list of threads.
+(define (4chan-catalog-find-lisp-general catalog)
+  (let* ([maybe-lg
+          (filter
+           4chan-thread-is-lisp-general?
+           (flatten
+            (map (lambda (page) (hash-ref page 'threads)) catalog)))])
     (if (empty? maybe-lg)
         '()
         (car maybe-lg))))
