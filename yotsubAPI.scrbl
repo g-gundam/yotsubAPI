@@ -2,8 +2,8 @@
 @(require (for-label racket/base
                      "main.rkt"))
 
-@title{IRC Client Library}
+@title{4chan API Client Library}
 
-@defmodule[irc]
+@defmodule[yotsubAPI]
 
 Hi

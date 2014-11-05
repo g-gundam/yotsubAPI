@@ -7,7 +7,6 @@
 (provide 4chan-data-page)
 (provide 4chan-data-catalog)
 (provide 4chan-data-thread)
-
 ;; 4chan Data Helpers
 (provide 4chan-catalog-search)
 (provide 4chan-thread-match-fn)
@@ -15,7 +14,10 @@
 (provide 4chan-catalog-search-g-lisp-general)
 (provide 4chan-thread-url)
 
-;; Functions
+;;
+;; Implementation
+;;
+
 (define (4chan-data board x)
   (let*-values
       ([(status headers res)
