@@ -1,3 +1,3 @@
 #lang info
-(define collection "4chan")
+(define collection "yotsubAPI")
 (define version "0.1")
