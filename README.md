@@ -6,6 +6,8 @@ A Racket Client for the [4chan API](https://github.com/4chan/4chan-API)
 
 ```racket
 (require yotsubAPI)
+(define catalog (4chan-data-catalog "g"))
+(define lispg (4chan-catalog-find-lisp-general catalog))
 ```
 
 ## TODO
