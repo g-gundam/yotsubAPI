@@ -4,7 +4,7 @@ A Racket Client for the [4chan API](https://github.com/4chan/4chan-API)
 
 ## Installation
 
-From [pkg.racket-lang.org](http://pkg.racket-lang.org/):
+From [pkgs.racket-lang.org](http://pkgs.racket-lang.org/):
 ```sh
 raco pkg install yotsubAPI
 ```
