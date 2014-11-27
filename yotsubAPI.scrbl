@@ -54,7 +54,7 @@ yotsubAPI is an interface to the 4chan JSON API.
   for the first Lisp General it finds, if it exists.
 }
 
-@defproc[(4chan-thread-url [board string?] [thread number?]) string?]{
+@defproc[(4chan-thread-url [board string?] [thread hasheq?]) string?]{
   This procedure takes a board identifier and a thread number and returns
   its URL as a string.
 }
