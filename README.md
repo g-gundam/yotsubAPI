@@ -2,7 +2,7 @@
 
 A Racket Client for the [4chan API](https://github.com/4chan/4chan-API)
 
-![Yotsuba](http://i.imgur.com/xzvD0pX.jpg)
+![Yotsuba](http://i.imgur.com/QM7sA6j.jpg)
 
 ## Installation
 
