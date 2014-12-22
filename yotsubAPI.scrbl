@@ -55,6 +55,6 @@ yotsubAPI is an interface to the 4chan JSON API.
 }
 
 @defproc[(4chan-thread-url [board string?] [thread number?]) string?]{
-  This procedure takes a board identifier and a thread number and returns
+  This procedure takes a board identifier and a thread's @racket[hasheq] and returns
   its URL as a string.
 }
