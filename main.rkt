@@ -56,7 +56,7 @@
 
 (define (4chan-thread-is-lisp-general? thread)
     (and (hash-has-key? thread 'sub)
-         (regexp-match "Lisp General" (hash-ref thread 'sub))))
+         (regexp-match #rx"(?i:Lisp General)" (hash-ref thread 'sub))))
 
 ; Find first lisp general if possible
 ; This may return a single thread while 4chan-catalog-search returns a list of threads.
