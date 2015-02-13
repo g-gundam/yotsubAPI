@@ -38,5 +38,5 @@ going here:
 
 ## Used By
 
-* [zero808/ya4cid](/zero808/ya4cid) - Yet another 4chan image downloader
+* [zero808/ya4cid](https://github.com/zero808/ya4cid) - Yet another 4chan image downloader
 
