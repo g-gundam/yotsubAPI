@@ -1,4 +1,4 @@
-# yotsubAPI | よつばぴー
+# yotsubAPI ☆ よつばぴー
 
 A Racket Client for the [4chan API](https://github.com/4chan/4chan-API)
 
@@ -35,3 +35,8 @@ make the name all lower case, but for now, you can view the documentation by
 going here:
 
 [http://pkg-build.racket-lang.org/doc/yotsubAPI/index.html](http://pkg-build.racket-lang.org/doc/yotsubAPI/index.html) 
+
+## Used By
+
+* [zero808/ya4cid](https://github.com/zero808/ya4cid) - Yet another 4chan image downloader
+
