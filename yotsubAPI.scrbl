@@ -6,36 +6,38 @@
 
 @defmodule[yotsubAPI]
 
-yotsubAPI is an interface to the 4chan JSON API.
+yotsubAPI is an interface to the 4chan JSON API. The catalog is a list of threads
+and the threads are @racket[hasheq]'s.
 
 @section{Procedures}
 
-@defproc[(4chan-data [board string?] [x (or/c string? number?)]) hasheq?]{
+@defproc[(4chan-data [board string?] [x (or/c string? number?)]) (listof hash-eq?)]{
   This procedure is used as the backbone for many other procedures.
 
   It takes a board identifier (e.g. "g" or "a") and either a thread number
   or the string "catalog".
 }
 
-@defproc[(4chan-data-page [board string?] [n number?]) hasheq?]{
+@defproc[(4chan-data-page [board string?] [n number?]) (listof hash-eq?)]{
   This procedure takes a board identifier as a string and a page number
-  and returns a @racket[hasheq] with information about the page.
+  and returns a list of hashes with information about the page.
 }
 
-@defproc[(4chan-data-catalog [board string?]) hasheq?]{
-  This procedure takes a board identifier and returns a @racket[hasheq]
+@defproc[(4chan-data-catalog [board string?]) (listof hash-eq?)]{
+  This procedure takes a board identifier and returns a list of hashes
   containing information about that board's catalog.
 }
 
-@defproc[(4chan-data-thread [board string?] [id number?]) hasheq?]{
+@defproc[(4chan-data-thread [board string?] [id number?]) (listof hash-eq?)]{
   This procedure takes a board identifier and a thread number and
   returns a @racket[hasheq] containing the information about that thread.
 }
 
-@defproc[(4chan-catalog-search [catalog hasheq?]
-                               [pattern (or/c regexp? byte-regexp? string? bytes?)]) hasheq?]{
-  This procedure takes a hasheq (created from running @racket[4chan-data-catalog])
-  and a pattern to search and returns a hasheq containing the search results.
+@defproc[(4chan-catalog-search [catalog hash-eq?]
+                               [pattern (or/c regexp? byte-regexp? string? bytes?)])
+         (listof hash-eq?)]{
+  This procedure takes a list of hashes (created from running @racket[4chan-data-catalog])
+  and a regexp pattern to search and returns a @racket[hasheq] containing the search results.
 }
 
 @defproc[(4chan-thread-match-fn
@@ -44,17 +46,17 @@ yotsubAPI is an interface to the 4chan JSON API.
   it will return a procedure that you apply to a thread's @racket[hasheq].
 }
 
-@defproc[(4chan-thread-is-lisp-general? [thread hasheq?]) boolean?]{
+@defproc[(4chan-thread-is-lisp-general? [thread hash-eq?]) boolean?]{
   This procedure is a helper procedure takes takes a thread's @racket[hasheq]
   and will return a boolean value.
 }
 
-@defproc[(4chan-catalog-find-lisp-general [catalog hasheq?]) hasheq?]{
+@defproc[(4chan-catalog-find-lisp-general [catalog (listof hash-eq?)]) hash-eq?]{
   This procedure takes a catalog's @racket[hasheq] and returns the @racket[hasheq]
   for the first Lisp General it finds, if it exists.
 }
 
-@defproc[(4chan-thread-url [board string?] [thread hasheq?]) string?]{
+@defproc[(4chan-thread-url [board string?] [thread hash-eq?]) string?]{
   This procedure takes a board identifier and a thread's @racket[hasheq] and returns
   its URL as a string.
 }
